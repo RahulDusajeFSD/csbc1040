@@ -1,0 +1,5 @@
+runtime: nodejs16  # or your preferred Node.js version
+
+handlers:
+- url: /.*
+  script: auto
