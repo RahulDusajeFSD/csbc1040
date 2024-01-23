@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-counterappdemo-dev-04219-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654376901:role/amplify-counterappdemo-dev-04219-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654376901:role/amplify-counterappdemo-dev-04219-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-counterappdemo-dev-04219-deployment",
+      "UnauthRoleName": "amplify-counterappdemo-dev-04219-unauthRole",
+      "StackName": "amplify-counterappdemo-dev-04219",
+      "StackId": "arn:aws:cloudformation:us-east-2:654654376901:stack/amplify-counterappdemo-dev-04219/2d0fee00-b9b2-11ee-87c5-06abd060e267",
+      "AmplifyAppId": "d1y7tkgkoeh0k5"
+    }
+  }
+}
