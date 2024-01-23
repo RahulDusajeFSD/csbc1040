@@ -1,4 +1,4 @@
-name: Build and Deploy to AWS
+name: Build and Deploy to AWS Amplify
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - assignment-2-develop
 
 jobs:
-  build_and_deploy_aws:
+  build_and_deploy_aws_amplify:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,18 +29,25 @@ jobs:
 
       - name: Configure AWS CLI
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws configure set region us-east-1
+          echo "[default]" >> $HOME/.aws/credentials
+          echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $HOME/.aws/credentials
+          echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $HOME/.aws/credentials
+          echo "region=us-east-2" >> $HOME/.aws/config
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Deploy to AWS
-        run: |
-          npm install -g @aws-amplify/cli
-          amplify configure --appid ${{ secrets.AMPLIFY_APP_ID }} --envName develop
-          amplify publish
+      - name: Install Amplify CLI
+        run: npm install -g @aws-amplify/cli
+
+      - name: Configure Amplify CLI
+        run: amplify configure --appid ${{ secrets.AMPLIFY_APP_ID }} --envName develop
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy to AWS Amplify
+        run: amplify publish
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
