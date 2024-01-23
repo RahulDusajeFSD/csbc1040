@@ -1,6 +1,6 @@
 
 
-Deploying Node App to GCP.
+Deploying Node App to Google App Engine.
 
 1) Clone the repo - https://github.com/RahulDusajeFSD/csbc1040.git  into your local system (branch - main)
 
