@@ -44,7 +44,7 @@ jobs:
         run: amplify init
 
       - name: Configure Amplify CLI
-        run: amplify configure --appid ${{ secrets.AMPLIFY_APP_ID }} --envName develop
+        run: amplify configure --appid ${{ secrets.AMPLIFY_APP_ID }} --envName dev
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
