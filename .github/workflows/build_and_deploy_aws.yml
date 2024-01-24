@@ -37,9 +37,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Initialize amplify
-        run: amplify init
-
       - name: Install Amplify CLI
         run: npm install -g @aws-amplify/cli
 
