@@ -10,6 +10,14 @@
       "StackName": "amplify-counterappdemo-dev-04219",
       "StackId": "arn:aws:cloudformation:us-east-2:654654376901:stack/amplify-counterappdemo-dev-04219/2d0fee00-b9b2-11ee-87c5-06abd060e267",
       "AmplifyAppId": "d1y7tkgkoeh0k5"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1y7tkgkoeh0k5",
+          "type": "manual"
+        }
+      }
     }
   }
 }

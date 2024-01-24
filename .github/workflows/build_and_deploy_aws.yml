@@ -40,6 +40,9 @@ jobs:
       - name: Install Amplify CLI
         run: npm install -g @aws-amplify/cli
 
+      - name: Initialize Amplify
+        run: amplify init
+
       - name: Configure Amplify CLI
         run: amplify configure --appid ${{ secrets.AMPLIFY_APP_ID }} --envName develop
         env:
